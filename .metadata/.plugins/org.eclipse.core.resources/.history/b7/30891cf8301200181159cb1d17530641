@@ -1,0 +1,11 @@
+import org.junit.BeforeClass;
+
+public class Tests {
+	
+	@BeforeClass
+	public void beforeClass()
+	{
+		
+	}
+
+}

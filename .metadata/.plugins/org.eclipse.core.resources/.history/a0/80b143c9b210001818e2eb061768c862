@@ -1,0 +1,93 @@
+package testingweek;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+
+public class LoginTestUsingPage {
+	private static WebDriver webDriver;
+	private static HomePage m_homePage;
+	private static CreateAccountPage m_CreateAccPageObj;
+	private static LoginPage m_loginPage;
+	private static final String BASE_URL = "http://thedemosite.co.uk";
+
+	@BeforeClass
+	public static void init() {
+		
+		System.out.println("Before Class");
+	}
+
+	@Before
+	public void setup() {
+		webDriver = new ChromeDriver();
+		webDriver.navigate().to(BASE_URL);
+		System.out.println("Before");
+	}
+
+	@Test
+	public void openLogin() {
+		try {
+			TimeUnit.MICROSECONDS.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		m_homePage = PageFactory.initElements(webDriver, HomePage.class);
+		m_homePage.GoToLoginPage();
+		try {
+			TimeUnit.MICROSECONDS.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		m_CreateAccPageObj = PageFactory.initElements(webDriver, CreateAccountPage.class);
+		try {
+			TimeUnit.MICROSECONDS.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		m_CreateAccPageObj.sendUNameToCreateAcc("Shafeeq");
+		m_CreateAccPageObj.sendPassToCreateAcc("Secret");
+		m_CreateAccPageObj.clickCreateAccBtn();
+		m_CreateAccPageObj.goToLogin();
+
+		webDriver.navigate().to(BASE_URL + "/login.php");
+		try {
+			TimeUnit.MICROSECONDS.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		m_loginPage = PageFactory.initElements(webDriver, LoginPage.class);
+		m_loginPage.sendUNameToLogin("Shafeeq");
+		m_loginPage.sendPassToCLogin("Secret");
+		m_loginPage.clickLoginBtn();
+		
+		try {
+			TimeUnit.MICROSECONDS.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		assertEquals(m_loginPage.getSuccessField(), "**Successful Login**");
+
+	}
+
+	@After
+	public void cleanup() {
+		webDriver.quit();
+		System.out.println("After ");
+	}
+
+	@AfterClass
+	public static void tearDown() {
+
+		System.out.println("After Class");
+	}
+}

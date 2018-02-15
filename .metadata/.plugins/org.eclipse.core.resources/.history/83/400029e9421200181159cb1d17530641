@@ -1,0 +1,23 @@
+import java.sql.Date;
+import java.util.Calendar;
+import java.util.TimeZone;
+
+import net.sf.cglib.core.Local;
+
+public class Source {
+
+	public static void main(String args[])
+	{
+		Interface m_view = new Interface();
+		
+		while(true)
+		{
+			Calendar c = Calendar.getInstance();
+			System.out.println(c.getTime().getDay());
+			//c.DAY_OF_WEEK;
+			
+			m_view.newCustomer();
+		}
+		//System.out.println("input was: " + m_view.taveInput());
+	}
+}

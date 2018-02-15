@@ -1,0 +1,16 @@
+import static org.junit.Assert.assertEquals;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class Tests {
+
+	
+	@Test
+	public void aditionTest()
+	{
+		Calculator calculator = new Calculator();
+		assertEquals(2, calculator.add(1,1));
+	}
+
+}

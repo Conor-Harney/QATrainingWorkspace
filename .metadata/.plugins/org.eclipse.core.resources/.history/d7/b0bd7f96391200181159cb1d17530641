@@ -1,0 +1,24 @@
+
+
+public class TicketCalculator {
+	
+	
+	final double[] priceList = new double[]{8.0,6.0,6.0,4.0};//this list of prices will correspond to the customer type list 
+	String[] customerTypes = new String[] {"Standard","OAP","Student","Child"};
+	
+	public TicketCalculator()
+	{
+		
+	}
+	
+	public Double CalculateCosts(int numOfStdTickets, int NumOfOPATickets, int NumOfStudentTickets, int NumOfChildTickets)
+	{
+		double total = 0;
+		total += numOfStdTickets * priceList[0];
+		total += NumOfOPATickets * priceList[1];
+		total += NumOfStudentTickets * priceList[2];
+		total += NumOfChildTickets * priceList[3];
+		
+		return total;
+	}
+}

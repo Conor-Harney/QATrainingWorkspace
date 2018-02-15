@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class View {
+	
+	   Scanner m_scanner; 
+	   
+	   public View()
+	   {
+		   m_scanner = new Scanner(System.in);
+	   }
+	   
+	   public int taveInput()
+	   {
+		   return  m_scanner.nextInt();
+	   }
+	   
+
+}

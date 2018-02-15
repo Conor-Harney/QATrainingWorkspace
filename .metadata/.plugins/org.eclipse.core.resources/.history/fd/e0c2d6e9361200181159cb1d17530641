@@ -1,0 +1,41 @@
+import static org.junit.Assert.assertEquals;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class Tests {
+
+	@BeforeClass
+	public void beforeClass()
+	{
+		
+	}
+	
+	@Before
+	public void before()
+	{
+		
+	}
+	
+	@Test
+	public void test()
+	{
+		
+	}
+	
+	@After
+	public void after()
+	{
+		
+	}
+	
+	@AfterClass
+	public void afterClass()
+	{
+		
+	}
+
+}

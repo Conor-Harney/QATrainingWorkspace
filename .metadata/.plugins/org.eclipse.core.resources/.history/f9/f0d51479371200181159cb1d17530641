@@ -1,0 +1,9 @@
+
+public class Source {
+
+	public static void main(String args[])
+	{
+		View m_view = new View();
+		System.out.println("input was: " + m_view.taveInput());
+	}
+}

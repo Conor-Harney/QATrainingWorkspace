@@ -1,0 +1,24 @@
+package mouseActionTester;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+
+public class DroppablePage {
+	//default functionality 
+	@FindBy(css = "#draggableview")
+	private WebElement m_defaultDragableView;
+	
+	@FindBy(css = "#droppableview > p")
+	private WebElement m_defaultTargetOutput;
+	
+	public String voidclickAndHoldefaultDragableView(Actions mouseLst)
+	{
+		mouseLst.clickAndHold(m_defaultDragableView);
+		mouseLst.moveToElement(m_defaultTargetOutput);
+		mouseLst.release();
+		return "defaultDragableView held";
+	}
+	
+}

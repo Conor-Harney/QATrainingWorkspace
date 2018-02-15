@@ -1,0 +1,60 @@
+import java.util.Vector;
+
+public class TicketCalculator {
+	
+	
+	Vector<String> m_priceList = new Vector<String>();//this list of prices will correspond to the customer type list 
+	final Vector<String> m_customerTypes = new Vector<String>();
+	enum DAYS{ Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday};
+	private DAYS m_currentDay = DAYS.Monday;
+	
+	public DAYS getCurrentDay() {
+		return m_currentDay;
+	}
+
+	public void setCurrentDay(DAYS m_currentDay) {
+		this.m_currentDay = m_currentDay;
+	}
+
+	public TicketCalculator()
+	{
+		m_priceList.add("8");
+		m_customerTypes.add("Standard");
+		m_priceList.add("6");
+		m_customerTypes.add("OAP");
+		m_priceList.add("6");
+		m_customerTypes.add("Student");
+		m_priceList.add("4");
+		m_customerTypes.add("Child");
+	}
+	
+	public Double CalculateCosts(int numOfStdTickets, int NumOfOPATickets, int NumOfStudentTickets, int NumOfChildTickets)
+	{
+		
+		double total = 0;
+		total -= CheckForDiscountAmount(numOfStdTickets, NumOfOPATickets, NumOfStudentTickets, NumOfChildTickets);
+		total += numOfStdTickets * Double.parseDouble(m_priceList.get(0));
+		total += numOfStdTickets * Double.parseDouble(m_priceList.get(1));
+		total += numOfStdTickets * Double.parseDouble(m_priceList.get(2));
+		total += numOfStdTickets * Double.parseDouble(m_priceList.get(3));
+		
+		return total;
+	}
+	
+	private double CheckForDiscountAmount(int numOfStdTickets, int NumOfOPATickets, int NumOfStudentTickets, int NumOfChildTickets)
+	{
+		double discount = 0;
+		if(m_currentDay == DAYS.Wednesday)
+		{
+			discount += superWedensdayDiscount(numOfStdTickets, NumOfOPATickets, NumOfStudentTickets, NumOfChildTickets);
+		}
+		
+		return discount;
+	}
+	
+	private double superWedensdayDiscount(int numOfStdTickets, int NumOfOPATickets, int NumOfStudentTickets, int NumOfChildTickets)
+	{
+		int ticketsRequested = numOfStdTickets+ NumOfOPATickets + NumOfStudentTickets+ NumOfChildTickets;
+		return ticketsRequested*2;
+	}
+}

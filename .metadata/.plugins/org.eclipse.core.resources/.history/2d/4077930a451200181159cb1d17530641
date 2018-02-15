@@ -1,0 +1,24 @@
+
+public class Film {
+	
+	private String m_filmTitle;
+	public enum AgeRating{ChildAlowed,ChildNotAlowed}
+	AgeRating m_ageRating;
+	
+	
+	public Film(String title, AgeRating ageRating)
+	{
+		m_filmTitle = title;
+		m_ageRating = ageRating;
+	}
+	
+	public boolean checkChildAloud()
+	{
+		if(m_ageRating == AgeRating.ChildAlowed) return true;
+		else return false;
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,80 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+public class Interface {
+	
+	   Scanner m_scanner;
+	   TicketCalculator m_ticketCalc;
+	   ArrayList<Screening> m_screenings = new ArrayList<Screening>(); 
+	   
+	   public Interface()
+	   {
+		   m_ticketCalc = new TicketCalculator();
+		   m_scanner = new Scanner(System.in);
+		   m_screenings.add(new Screening("The Evil Carrot", Screening.AgeRating.ChildNotAlowed, "2A", "21:15"));
+		   m_screenings.add(new Screening("The Pleasant Carrot", Screening.AgeRating.ChildAlowed, "4B", "13:07"));
+		   m_screenings.add(new Screening("Day of the Carrots", Screening.AgeRating.ChildNotAlowed, "1B", "13:00"));
+	   }
+	   
+	   
+	   public void newCustomer()
+	   {//request the number of each type of ticket and output the cost
+		   Screening chosenScreening = m_screenings.get(0);
+		   System.out.println("Welcome to QACinemas");
+		   chosenScreening = choseScreening();
+		   System.out.println("Select the number of Standard tickets required");
+		   int numOfStandardTickets = m_scanner.nextInt();
+		   System.out.println("Select the number of OAP tickets required");
+		   int numOfOAPTickets = m_scanner.nextInt();
+		   System.out.println("Select the number of Student tickets required");
+		   int numOfStudentTickets = m_scanner.nextInt();
+		   int numOfChildTickets = 0;
+		   if(chosenScreening.checkChildAloud()) {
+			   System.out.println("Select the number of Child tickets required");
+			   numOfChildTickets = m_scanner.nextInt();
+		   }
+		   System.out.println("Thank you. The total cost of tickets for this movie is: £" + Double.toString(m_ticketCalc.CalculateCosts(numOfStandardTickets, numOfOAPTickets, numOfStudentTickets, numOfChildTickets)));
+		   m_scanner.nextInt();
+		   System.out.println("Thank you");
+		   try {TimeUnit.SECONDS.sleep(5);} catch (InterruptedException e) {e.printStackTrace();}
+	   }
+	   
+	   private Screening choseScreening(){
+		   Screening chosenScreening = m_screenings.get(0);
+		   
+		   System.out.println();System.out.println();System.out.println();
+		   System.out.println("Please select from todays screenings");
+		   for(int i = 0; i < m_screenings.size(); i++)
+		   {
+			   if(!m_screenings.get(i).checkChildAloud()) System.out.println("Warning, mature content");
+			   System.out.println("Screening number: "+ i + " Film: " + m_screenings.get(i).getFilmTitle() + " at " + m_screenings.get(i).getTime());
+			   System.out.println();
+		   }
+		   for(boolean filmSellected = false; filmSellected != true;)
+		   {
+			   System.out.println("Please select the screening number");
+			   int screeningNum = 0;
+			   try 
+			   {
+				   screeningNum = m_scanner.nextInt();
+				   if(screeningNum >= 0 && screeningNum < m_screenings.size())
+				   {
+					   chosenScreening = m_screenings.get(screeningNum);
+					   filmSellected = true;
+				   }
+				   else {
+					   System.out.println("please sellect a valid screening number");
+				   }
+			   }catch(Exception e)
+			   {
+				  m_scanner.nextLine();
+				  System.out.println("please sellect a valid screening number");
+			   }
+			   
+			  
+		   }
+		   System.out.println();System.out.println();System.out.println();
+		   return chosenScreening;
+	   }
+}

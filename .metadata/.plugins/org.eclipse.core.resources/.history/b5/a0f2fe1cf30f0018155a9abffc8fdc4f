@@ -1,0 +1,39 @@
+package testingweek;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class JUnitExample {
+	@BeforeClass
+	public static void init()
+	{
+		System.out.println("before class");
+	}
+	
+	@Before
+	public void setup()
+	{
+		System.out.println("setup");
+	}
+	
+	@Test
+	public void printTest()
+	{
+		System.out.println("print test");
+	}
+	
+	@After
+	public void cleanup()
+	{
+		System.out.println("After ");
+	}
+	
+	@AfterClass
+	public static void tearDown()
+	{
+		System.out.println("After class");
+	}
+}

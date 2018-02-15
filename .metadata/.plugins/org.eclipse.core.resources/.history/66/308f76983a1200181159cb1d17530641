@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Interface {
+	
+	   Scanner m_scanner; 
+	   
+	   public Interface()
+	   {
+		   m_scanner = new Scanner(System.in);
+	   }
+	   
+	   
+	   
+	   public String CollectUserTicketRequest()
+	   {
+		   
+		   System.out.println("Select the number of Standard tickets required");
+		   System.out.println("Select the number of OAP tickets required");
+		   System.out.println("Select the number of Student tickets required");
+		   System.out.println("Select the number of Child tickets required");
+		   
+		   return  m_scanner.nextLine();
+	   }
+	   
+
+}

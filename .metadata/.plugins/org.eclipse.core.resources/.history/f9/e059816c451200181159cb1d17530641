@@ -1,0 +1,26 @@
+
+public class Screening {
+	
+	private String m_filmTitle;
+	public enum AgeRating{ChildAlowed,ChildNotAlowed}
+	AgeRating m_ageRating;
+	String m_screen;
+	String m_Time;
+	
+	
+	public Screening(String title, AgeRating ageRating, screen, time)
+	{
+		m_filmTitle = title;
+		m_ageRating = ageRating;
+	}
+	
+	public boolean checkChildAloud()
+	{
+		if(m_ageRating == AgeRating.ChildAlowed) return true;
+		else return false;
+	}
+	
+	
+	
+
+}
