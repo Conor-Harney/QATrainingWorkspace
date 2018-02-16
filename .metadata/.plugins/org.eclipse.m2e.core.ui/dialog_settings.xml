@@ -2,10 +2,15 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.qa.account"/>
+			<item value="Com.QA"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Account-Project1"/>
+			<item value="account-project"/>
+			<item value="QACinemas"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -31,6 +36,20 @@
 		<list key="issueManagementUrl">
 		</list>
 	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\Admin\Desktop\Java-Assessment"/>
+			<item value="C:\Users\Admin\Desktop\New folder\sampleapp"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
 	<section name="MavenProjectWizardArchetypePage">
 		<item value="All Catalogs" key="catalog"/>
 		<list key="projectNameTemplate">
@@ -44,6 +63,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Admin\eclipse-workspace\testingweek\src\test\java"/>
 			<item value="C:\Users\Admin\eclipse-workspace\testingweek\src\test\java\testingweek\LoginTestUsingPage.java"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -57,13 +77,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.tutorials.testingTutorial"/>
 		</list>
 		<list key="groupId">
-			<item value="com.tutorials"/>
 		</list>
 		<list key="artifactId">
-			<item value="testingTutorial"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

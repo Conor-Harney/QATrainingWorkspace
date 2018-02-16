@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="wait"/>
 			<item value="//wait 1 second"/>
 			<item value="MICROSECONDS"/>
 			<item value="asser3"/>
@@ -28,7 +29,7 @@
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="1286" key="DIALOG_X_ORIGIN"/>
-		<item value="548" key="DIALOG_Y_ORIGIN"/>
+		<item value="1072" key="DIALOG_X_ORIGIN"/>
+		<item value="80" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

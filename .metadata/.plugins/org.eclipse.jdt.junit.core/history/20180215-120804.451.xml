@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="Tests (1)" project="QACinemas" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="Tests" time="0.0">
-    <testcase name="testAgeRating" classname="Tests" time="0.0"/>
-    <testcase name="testCalculateCostsNormal" classname="Tests" time="0.0"/>
-    <testcase name="testCalculateCostsDiscount" classname="Tests" time="0.0"/>
-  </testsuite>
-</testrun>
