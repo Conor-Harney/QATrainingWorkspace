@@ -38,6 +38,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Admin\Desktop\clones"/>
 			<item value="C:\Users\Admin\Desktop\Java-Assessment"/>
 			<item value="C:\Users\Admin\Desktop\New folder\sampleapp"/>
 		</list>
